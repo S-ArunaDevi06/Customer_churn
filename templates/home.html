@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Insights Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static\css\style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1><i class="fas fa-chart-line"></i> Customer Insights Dashboard</h1>
+        </header>
+        
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="customer_id" placeholder="Enter Customer ID">
+                <button id="predict-btn"><i class="fas fa-search"></i> Analyze Customer</button>
+            </div>
+        </div>
+        
+        <div class="results-container">
+            <div class="result-card churn-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Churn Prediction</h2>
+                </div>
+                <div class="card-body">
+                    <div class="prediction-value" id="churn-value">--</div>
+                    <div class="probability-meter">
+                        <div class="probability-scale">
+                            <div class="probability-bar" id="churn-probability"></div>
+                        </div>
+                        <div class="probability-value" id="churn-percentage">0%</div>
+                    </div>
+                    <div class="recommendation-box" id="churn-recommendation">
+                        Enter a Customer ID to get churn prediction and recommendations
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-card cltv-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-dollar-sign"></i> Customer Lifetime Value</h2>
+                </div>
+                <div class="card-body">
+                    <div class="prediction-value" id="cltv-value">$--</div>
+                    <div class="range-indicator">
+                        <div class="range-labels">
+                            <span>3000</span>
+                            <span>3500</span>
+                            <span>3900</span>
+                            <span>4200</span>
+                            <span>4600+</span>
+                        </div>
+                        <div class="range-track">
+                            <div class="range-progress" id="cltv-range"></div>
+                        </div>
+                    </div>
+                    <div class="recommendation-box" id="cltv-recommendation">
+                        Enter a Customer ID to get CLTV prediction and recommendations
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="customer-details">
+            <h3><i class="fas fa-user-tie"></i> Customer Details</h3>
+            <div class="details-grid" id="customer-details">
+                <div class="detail-item">
+                    <span class="detail-label">Customer ID:</span>
+                    <span class="detail-value" id="detail-id">--</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Tenure:</span>
+                    <span class="detail-value" id="detail-tenure">-- months</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Monthly Charges:</span>
+                    <span class="detail-value" id="detail-monthly">$--</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Total Charges:</span>
+                    <span class="detail-value" id="detail-total">$--</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="static\css\js\script.js"></script>
+</body>
+</html>
